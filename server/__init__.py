@@ -1,7 +1,9 @@
+from flask_restplus import Api
 import os
 from flask import Flask, abort, session, request, redirect
 from flask.json import jsonify
 
+api = Api(app, title='My first Python API', version='1.0', doc='/apidocs/', description='A number-crunching API')
 app = Flask(__name__, template_folder="../public", static_folder="../public", static_url_path='')
 
 from server.routes import *
